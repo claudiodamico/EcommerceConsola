@@ -1,0 +1,42 @@
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.deps.json
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.runtimeconfig.json
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.AssemblyReference.cache
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfoInputs.cache
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfo.cs
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.CoreCompileInputs.cache
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\refint\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.genruntimeconfig.cache
+C:\Users\casto\Downloads\Pruebas 2\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\ref\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.deps.json
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.runtimeconfig.json
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.AssemblyReference.cache
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfoInputs.cache
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfo.cs
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.CoreCompileInputs.cache
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\refint\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.genruntimeconfig.cache
+C:\Users\casto\Downloads\2do Cuatri 2022\Proyecto Software\TP-1\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\ref\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.deps.json
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.runtimeconfig.json
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\bin\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.AssemblyReference.cache
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfoInputs.cache
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.AssemblyInfo.cs
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.csproj.CoreCompileInputs.cache
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\refint\TP1-ORM-AccessData.dll
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.pdb
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\TP1-ORM-AccessData.genruntimeconfig.cache
+C:\Users\casto\Downloads\TP1-ORM_Damico_Claudio\TP1-ORM-AccessData\obj\Debug\net6.0\ref\TP1-ORM-AccessData.dll
