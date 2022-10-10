@@ -48,9 +48,7 @@ namespace TP1_ORM_Core.Services
                
                 if (cliente != null)
                 {
-                    Console.WriteLine("El cliente ya esta registrado" + "\n" +
-                                       "Presione enter para continuar y volver al menú principal.");
-                    Console.ReadKey();
+                    Console.WriteLine("El cliente ya esta registrado" + "\n");
                     return;
                 }
                 
@@ -66,9 +64,7 @@ namespace TP1_ORM_Core.Services
 
                     });
 
-                    Console.WriteLine("El cliente se registro exitosamente!" + "\n" +
-                                      "Presione enter para continuar y volver al menú principal.");
-                    Console.ReadKey();
+                    Console.WriteLine("El cliente se registro exitosamente!" + "\n");
                 }
                 else
                 {

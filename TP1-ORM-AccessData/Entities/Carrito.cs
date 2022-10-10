@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace TP1_ORM_AccessData.Entities
 {
     public class Carrito 

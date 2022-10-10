@@ -1,7 +1,6 @@
 ﻿
 using TP1_ORM_AccessData.Data;
 
-
 namespace TP1_ORM_Core.Validations
 {
     public class Validate

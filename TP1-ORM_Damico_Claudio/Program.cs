@@ -1,5 +1,4 @@
 ﻿
-using TP1_ORM_AccessData.Entities;
 using TP1_ORM_Core.Services;
 
 namespace TP1_ORM_Presentation
@@ -16,6 +15,8 @@ namespace TP1_ORM_Presentation
             string op;
             do
             {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.Clear();
                 Console.WriteLine("*******************************************************************\n" +
                                   "****                          Tiendita                         ****\n" +
@@ -69,7 +70,9 @@ namespace TP1_ORM_Presentation
         static void RegistroDeCliente()
         {
             var service = new ClientesServices();
-            Console.WriteLine("Registrece en el sistema");
+            Console.WriteLine("*******************************************************************\n" +
+                              "****                  Registrece en el sistema                 ****\n" +
+                              "*******************************************************************\n"); 
             service.RegistraCliente();
             Console.WriteLine("\n");
             Console.WriteLine("Presione enter para continuar y volver al menú principal.");
@@ -88,8 +91,10 @@ namespace TP1_ORM_Presentation
         static void VerListaDeVentas()
         {
             var service = new VentasServices();
-            Console.WriteLine("Listado de ventas del dia\n");
-            service.ListarVentas();
+            Console.WriteLine("*******************************************************************\n" +
+                              "****                   Listado de ventas del dia               ****\n" +
+                              "*******************************************************************\n");
+            service.ListaDeVentas();
             Console.WriteLine("\n");
             Console.WriteLine("Presione enter para continuar y volver al menú principal.");
             Console.ReadKey();
@@ -98,9 +103,11 @@ namespace TP1_ORM_Presentation
         static void BuscarProducto()
         {
             var service = new VentasServices();
-            Console.WriteLine("Buscar productos vendidos\n");
-            service.ListarProductosEnVentas();
-            Console.WriteLine("\n");
+            Console.WriteLine("*******************************************************************\n" +
+                              "****                   Buscar productos vendidos               ****\n" +
+                              "*******************************************************************\n"); 
+            service.ListaDeProductosVendidos();
+            Console.WriteLine("\n");           
             Console.WriteLine("Presione enter para continuar y volver al menú principal.");
             Console.ReadKey();
         }                 

@@ -17,9 +17,14 @@ namespace TP1_ORM_Core.Business
             _services.RegistrarVenta();
         }
 
-        public void ListarVentas()
+        public void ListaDeVentas()
         {
-            _services.ListarVentas();
+            _services.ListaDeVentas();
+        }
+
+        public void ListaDeProductosVendidos()
+        {
+            _services.ListaDeProductosVendidos();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TP1_ORM_Core.Services
         private readonly ClientesServices _clientesServices;
         private readonly OrdenSevices _ordenSevices;
         private readonly CarritoServices _carritoServices;
-
+        private readonly Queries _queries;
         public VentasServices()
         {
             _validate = new Validate();
@@ -20,110 +20,16 @@ namespace TP1_ORM_Core.Services
             _clientesServices = new ClientesServices();
             _ordenSevices = new OrdenSevices();
             _carritoServices = new CarritoServices();
-        }
-
-        public void ListarVentas()
+            _queries = new Queries();
+        }      
+        public void ListaDeVentas()
         {
-            using (var _context = new TiendaDbContext())
-            {
-                ProductosServices productos = new ProductosServices();
-
-                var ordenes = (from c in _context.Carritos
-                               join cl in _context.Clientes
-                               on c.ClienteId equals cl.ClienteId
-                               join o in _context.Ordenes
-                               on c.CarritoId equals o.CarritoId
-                               join cp in _context.CarritoProductos
-                               on c.CarritoId equals cp.CarritoId
-                               join p in _context.Productos
-                               on cp.ProductoId equals p.ProductoId
-                               select new
-                               {
-                                   orden = o.OrdenId,
-                                   fecha = o.Fecha,
-                                   cliente = cl.Nombre,
-                                   apellido = cl.Apellido,
-                                   producto = p.Nombre,
-                                   codigo = p.Codigo,
-                                   cantidad = cp.Cantidad,
-                                   total = o.Total,
-                               }).OrderByDescending(x => x.fecha).ToList();               
-
-
-                if (ordenes.Count == 0)
-                {
-                    Console.WriteLine("No hay ventas realizadas en el dia de la fecha");
-                    return;
-                }
-                else
-                {
-                    foreach (var venta in ordenes)
-                    {
-                        Console.WriteLine("Orden: " + venta.orden + "\n" +
-                                          "Fecha: " + venta.fecha + "\n" +
-                                           "Cliente: " + venta.cliente + " " + venta.apellido + "\n" +
-                                           "Producto: " + venta.producto + "\n" +
-                                           "Codigo: " + venta.codigo + "\n" +
-                                           "Cantidad: " + venta.cantidad + "\n" +
-                                           "Total: " + venta.total + "\n");                       
-                    }
-                }
-
-                decimal montoTotal = _context.Ordenes.Sum(t => t.Total);
-
-                Console.WriteLine("Total de ventas: " + ordenes.Count);
-                Console.WriteLine("Monto total de ventas: " + montoTotal);
-                                              
-                return;
-            }
-        }
-
-        public void ListarProductosEnVentas()
+            _queries.ListarVentas();
+        }       
+        public void ListaDeProductosVendidos()
         {
-            using (var _context = new TiendaDbContext())
-            {
-                var ventas = (from c in _context.Carritos
-                              join cl in _context.Clientes
-                              on c.ClienteId equals cl.ClienteId
-                              join o in _context.Ordenes
-                              on c.CarritoId equals o.CarritoId
-                              join cp in _context.CarritoProductos
-                              on c.CarritoId equals cp.CarritoId
-                              join p in _context.Productos
-                              on cp.ProductoId equals p.ProductoId
-                              select new
-                              {
-                                  orden = o.OrdenId,
-                                  fecha = o.Fecha,
-                                  cliente = cl.Nombre,
-                                  apellido = cl.Apellido,
-                                  producto = p.Nombre,
-                                  codigo = p.Codigo,
-                                  cantidad = cp.Cantidad,
-                                  marca = p.Marca,
-                                  nombre = p.Nombre,
-                                  precio = p.Precio,
-                                  descripcion = p.Descripcion
-                              }).ToList();
-
-                Console.Write("Ingrese codigo de producto a buscar: ");
-                string codigo = Console.ReadLine();
-
-                var producto = ventas.FirstOrDefault(x => x.codigo == codigo);
-                if (codigo != "" && codigo != null)
-                {
-                    Console.WriteLine("Nombre del producto: " + producto.nombre + "\n" +
-                                      "Codigo del producto: " + producto.codigo + "\n" +
-                                      "Marca del producto: " + producto.marca + "\n" +
-                                      "Descripcion del producto: " + producto.descripcion + "\n" +
-                                      "Precio del producto: $" + producto.precio + "\n");
-                }
-                else
-                    Console.WriteLine("\n El codigo ingresado es incorrecto");
-
-            }
+            _queries.ListarProductosEnVentas();
         }
-
         public void RegistrarVenta()
         {
             using (var _context = new TiendaDbContext())
@@ -131,8 +37,8 @@ namespace TP1_ORM_Core.Services
                 var carrito = new Carrito
                 {
                     CarritoId = Guid.NewGuid(),
-                    ClienteId = 1,
-                    Estado = false
+                    ClienteId = 1, //Cliente harcodeado para poder realizar la venta
+                    Estado = true
                 };
 
                 _context.Carritos.Add(carrito);
@@ -143,7 +49,7 @@ namespace TP1_ORM_Core.Services
 
                     Console.WriteLine("Ingrese su DNI: ");
                     string dni = Console.ReadLine();
-
+                    //Validamos que el cliente este registrado para poder realizar la compra
                     if (_validate.ValidarCliente(dni) == null)
                     {
                         Console.WriteLine("No esta registrado en el sistema\n");
@@ -216,13 +122,17 @@ namespace TP1_ORM_Core.Services
                                 {
                                     _carritoServices.ModifyCarrito(carrito.CarritoId, dni);
                                     _ordenSevices.AddOrden(carrito.CarritoId, total);
+                                    carrito.Estado = false;
                                     _context.SaveChanges();
                                     Console.WriteLine("Se ha agregado el producto exitosamente!");
                                     Console.Write("Desea agregar otro producto al carrito? \nsi/no: \n");
                                     op = Console.ReadLine();
                                 }
                             }
-                            Console.WriteLine("Se ha realizado la venta exitosamente!");
+                            _ordenSevices.AddOrden(carrito.CarritoId, total);
+                            carrito.Estado = false;
+                            _context.SaveChanges();
+                            Console.WriteLine("Se ha realizado la compra exitosamente!");
                         }
                         else
                         {
