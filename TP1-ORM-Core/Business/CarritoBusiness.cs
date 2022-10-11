@@ -21,10 +21,5 @@ namespace TP1_ORM_Core.Business
         {
             _services.ModifyCarrito(Id, dni);
         }
-
-        public void AddCarrito()
-        {
-            _services.AddCarrito();
-        }
     }
 }

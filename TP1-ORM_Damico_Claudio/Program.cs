@@ -54,7 +54,7 @@ namespace TP1_ORM_Presentation
 
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("Saliendo del programa");
+                        Console.WriteLine("Saliendo del programa!");
                         break;
 
                     default:
@@ -64,7 +64,7 @@ namespace TP1_ORM_Presentation
                         Console.ReadLine();
                         break;
                 }
-            } while (op != "6");
+            } while (op != "5");
         }
 
         static void RegistroDeCliente()

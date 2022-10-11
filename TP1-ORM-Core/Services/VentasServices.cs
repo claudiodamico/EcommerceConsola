@@ -21,11 +21,11 @@ namespace TP1_ORM_Core.Services
             _ordenSevices = new OrdenSevices();
             _carritoServices = new CarritoServices();
             _queries = new Queries();
-        }      
+        }
         public void ListaDeVentas()
         {
             _queries.ListarVentas();
-        }       
+        }
         public void ListaDeProductosVendidos()
         {
             _queries.ListarProductosEnVentas();
@@ -49,23 +49,22 @@ namespace TP1_ORM_Core.Services
 
                     Console.WriteLine("Ingrese su DNI: ");
                     string dni = Console.ReadLine();
-                    //Validamos que el cliente este registrado para poder realizar la compra
+                    //Validamos que el cliente este registrado para poder validar si existe
                     if (_validate.ValidarCliente(dni) == null)
                     {
                         Console.WriteLine("No esta registrado en el sistema\n");
                         _clientesServices.RegistraCliente();
                     };
-                    
 
-                    Console.WriteLine("Desea comprar un producto? si para seguir, no para volver al menu principal\n");
+                    Console.WriteLine("Bienvenido a nuestra tienda, elija el producto que desea comprar\n");
 
-                    string op = Console.ReadLine();
+                    var op = "si";
 
                     while (op == "si")
                     {
                         _productosServices.ListarProductos();
 
-                        Console.Write("Seleccione el codigo del producto que desea comprar: \n");
+                        Console.Write("Seleccione el codigo del producto que desea comprar: ");
                         string codigo = Console.ReadLine();
 
                         var producto = _productosServices.ProductoByCodigo(codigo);
@@ -73,7 +72,7 @@ namespace TP1_ORM_Core.Services
                         while (_validate.ValidarProducto(codigo) == null)
                         {
                             Console.WriteLine("El codigo no existe en el catalaogo de productos.\n" +
-                                          "Por favor vuelva a intentar con otro codigo valido.\n"); 
+                                          "Por favor vuelva a intentar con otro codigo valido.\n");
 
                             codigo = Console.ReadLine();
                             producto = _productosServices.ProductoByCodigo(codigo);
@@ -97,48 +96,17 @@ namespace TP1_ORM_Core.Services
 
                             Console.Write("Desea agregar otro producto al carrito? \nsi/no: \n");
                             op = Console.ReadLine();
-
-                            while (op == "si")
-                            {
-                                _productosServices.ListarProductos();
-                                Console.Write("Seleccione el codigo del producto que desea agregar al carrito: \n");
-                                codigo = Console.ReadLine();
-
-                                producto = _productosServices.ProductoByCodigo(codigo);
-
-                                if (_validate.ValidarProducto(codigo) == null)
-                                {
-                                    Console.WriteLine("El codigo no existe en el catalaogo de productos.\n" +
-                                                  "Por favor vuelva a intentar con otro codigo valido.\n" +
-                                                  "Presione una tecla para volver al menú principal.");
-                                    Console.ReadKey();
-                                    return;
-                                }
-
-                                Console.Write("Cantidad de unidades: ");
-                                cantidad = int.Parse(Console.ReadLine());
-
-                                if (cantidad != 0 && cantidad != null)
-                                {
-                                    _carritoServices.ModifyCarrito(carrito.CarritoId, dni);
-                                    _ordenSevices.AddOrden(carrito.CarritoId, total);
-                                    carrito.Estado = false;
-                                    _context.SaveChanges();
-                                    Console.WriteLine("Se ha agregado el producto exitosamente!");
-                                    Console.Write("Desea agregar otro producto al carrito? \nsi/no: \n");
-                                    op = Console.ReadLine();
-                                }
-                            }
-                            _ordenSevices.AddOrden(carrito.CarritoId, total);
-                            carrito.Estado = false;
-                            _context.SaveChanges();
-                            Console.WriteLine("Se ha realizado la compra exitosamente!");
                         }
                         else
                         {
                             Console.WriteLine("ocurrio un error!");
                         }
-                    }                   
+                    }
+                    _ordenSevices.AddOrden(carrito.CarritoId, total);
+                    carrito.Estado = false;
+                    _carritoServices.ModifyCarrito(carrito.CarritoId, dni);
+                    _context.SaveChanges();
+                    Console.WriteLine("Se ha realizado la compra exitosamente!");
                 }
                 catch (Exception ex)
                 {

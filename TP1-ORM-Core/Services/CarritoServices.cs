@@ -16,6 +16,7 @@ namespace TP1_ORM_Core.Services
             _cliente = new ClientesServices();
 
         }
+        //Traemos Carrito por Guid Id
         public Carrito GetCarritoId(Guid Id)
         {
             using (var _context = new TiendaDbContext())
@@ -24,22 +25,7 @@ namespace TP1_ORM_Core.Services
             }
         }
 
-        public Carrito AddCarrito()
-        {
-            using (var _context = new TiendaDbContext())
-            {
-                var carrito = new Carrito
-                {
-                    CarritoId = Guid.NewGuid(),
-                    ClienteId = new int(),
-                    Estado = false,
-                };
-                _context.Carritos.Add(carrito);
-                _context.SaveChanges();
-                return carrito;
-            }
-        }
-
+        //Modificamos el carrito con otro producto
         public void ModifyCarrito(Guid Id, string dni)
         {
             using (var _context = new TiendaDbContext())
