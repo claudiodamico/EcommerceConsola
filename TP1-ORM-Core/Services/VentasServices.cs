@@ -22,14 +22,17 @@ namespace TP1_ORM_Core.Services
             _carritoServices = new CarritoServices();
             _queries = new Queries();
         }
+        //Lista de ventas del dia
         public void ListaDeVentas()
         {
             _queries.ListarVentas();
         }
+        //Lista de productos vendidos
         public void ListaDeProductosVendidos()
         {
             _queries.ListarProductosEnVentas();
         }
+        //Registro de ventas
         public void RegistrarVenta()
         {
             using (var _context = new TiendaDbContext())
@@ -49,7 +52,7 @@ namespace TP1_ORM_Core.Services
 
                     Console.WriteLine("Ingrese su DNI: ");
                     string dni = Console.ReadLine();
-                    //Validamos que el cliente este registrado para poder validar si existe
+                    //Validamos que el cliente este registrado para seguir con la venta
                     if (_validate.ValidarCliente(dni) == null)
                     {
                         Console.WriteLine("No esta registrado en el sistema\n");
@@ -59,7 +62,7 @@ namespace TP1_ORM_Core.Services
                     Console.WriteLine("Bienvenido a nuestra tienda, elija el producto que desea comprar\n");
 
                     var op = "si";
-
+                    //Mientras el cliente ingrese si, seguira agregando productos
                     while (op == "si")
                     {
                         _productosServices.ListarProductos();
@@ -68,7 +71,7 @@ namespace TP1_ORM_Core.Services
                         string codigo = Console.ReadLine();
 
                         var producto = _productosServices.ProductoByCodigo(codigo);
-
+                        //Validamos que el producto no venga nulo segun validate
                         while (_validate.ValidarProducto(codigo) == null)
                         {
                             Console.WriteLine("El codigo no existe en el catalaogo de productos.\n" +
@@ -77,7 +80,7 @@ namespace TP1_ORM_Core.Services
                             codigo = Console.ReadLine();
                             producto = _productosServices.ProductoByCodigo(codigo);
                         }
-
+                        //Validamos que ingresen unidades
                         Console.Write("Cantidad de unidades: ");
                         int cantidad = int.Parse(Console.ReadLine());
 
@@ -102,7 +105,9 @@ namespace TP1_ORM_Core.Services
                             Console.WriteLine("ocurrio un error!");
                         }
                     }
+
                     _ordenSevices.AddOrden(carrito.CarritoId, total);
+                    Console.WriteLine("Generando orden de compra...\n");
                     carrito.Estado = false;
                     _carritoServices.ModifyCarrito(carrito.CarritoId, dni);
                     _context.SaveChanges();

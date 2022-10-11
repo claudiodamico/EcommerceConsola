@@ -6,6 +6,7 @@ namespace TP1_ORM_Core.Services
 {
     public class OrdenSevices
     {
+        //Generamos una orden nueva
         public void AddOrden(Guid Id, decimal total)
         {
             using (var _context = new TiendaDbContext())

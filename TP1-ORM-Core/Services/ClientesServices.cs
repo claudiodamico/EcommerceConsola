@@ -6,6 +6,7 @@ namespace TP1_ORM_Core.Services
 {
     public class ClientesServices
     {
+        //Traemos cliente por dni
         public Cliente GetCliente(string dni)
         {
             using (var _context = new TiendaDbContext())
@@ -13,11 +14,12 @@ namespace TP1_ORM_Core.Services
                 return _context.Clientes.FirstOrDefault(x => x.Dni == dni);
             }
         }
+        //Traemos cliente por dni
         public Cliente GetCliente(int dni)
         {
             return GetCliente(dni.ToString());
         }
-        //
+        //Registro de cliente
         public void Registrar(Cliente cliente)
         {
             using (var _context = new TiendaDbContext())
@@ -26,6 +28,7 @@ namespace TP1_ORM_Core.Services
                 _context.SaveChanges();
             }
         }
+        //Registramos los clientes
         public void RegistraCliente()
         {
             try
@@ -45,13 +48,13 @@ namespace TP1_ORM_Core.Services
                 Console.WriteLine("Ingrese su Dni: ");
                 string dni = Console.ReadLine();
                 var cliente = GetCliente(dni);
-               
+                //Validamos si el cliente esta registrado
                 if (cliente != null)
                 {
                     Console.WriteLine("El cliente ya esta registrado" + "\n");
                     return;
                 }
-                
+                //Validamos si los datos no estan vacios
                 if (nombre != "" && apellido != "" && direccion != "" && telefono != "")
                 {
                     Registrar(new Cliente

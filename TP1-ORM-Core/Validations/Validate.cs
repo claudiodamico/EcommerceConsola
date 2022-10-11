@@ -5,6 +5,7 @@ namespace TP1_ORM_Core.Validations
 {
     public class Validate
     {
+        //Validacion de productos
         public string? ValidarProducto(string codigo)
         {
             using (var _context = new TiendaDbContext())
@@ -21,7 +22,7 @@ namespace TP1_ORM_Core.Validations
                 }              
             }
         }
-
+        //Validacion de cliente
         public string? ValidarCliente(string dni)
         {
             using (var _context = new TiendaDbContext())
